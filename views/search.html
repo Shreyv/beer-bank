@@ -1,0 +1,31 @@
+<div ng-if="search.beers.length == 0" class="container" style="margin-left:25%">
+    <form class="form-horizontal">
+        <div class="form-group">{{search.hello}}
+            <label class="col-sm-2">IBU</label>
+            <input class="col-sm-2" ng-model="search.searchObj.ibu_gt" type="number" class="form-control" placeholder="Min IBU">
+            <input class="col-sm-2" ng-model="search.searchObj.ibu_lt" type="number" class="form-control" placeholder="Max IBU">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">ABV</label>
+            <input class="col-sm-2" ng-model="search.searchObj.abv_gt" type="number" class="form-control" placeholder="Min ABV">
+            <input class="col-sm-2" ng-model="search.searchObj.abv_lt" type="number" class="form-control" placeholder="Max ABV">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">EBC</label>
+            <input class="col-sm-2" ng-model="search.searchObj.ebc_gt" type="number" class="form-control" placeholder="Min EBC">
+            <input class="col-sm-2" ng-model="search.searchObj.ebc_lt" type="number" class="form-control" placeholder="Max EBC">
+        </div>
+        <button ng-click="search.search()" class="col-sm-offset-3 col-sm-2" type="submit" class="btn btn-default">
+        Search</button>
+    </form>
+</div>
+
+<div ng-if="search.beers.length > 0">
+        <div class="list">
+                <div class="row" ng-repeat="chunk in search.beers | chunkBy:3">
+                    <div class="col-lg-3 " ng-repeat="beer in chunk">
+                        <beer details="beer">
+                        </beer>
+                    </div>
+                </div>
+</div>

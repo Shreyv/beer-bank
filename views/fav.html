@@ -1,0 +1,11 @@
+<div class="list">
+        <div class="row" ng-repeat="chunk in fav.beers | chunkBy:3">
+            <div class="col-lg-3 " ng-repeat="beer in chunk">
+                <beer details="beer">
+                </beer>
+            </div>
+        </div>
+    
+    <div ng-if="fav.beers.length == 0">
+        <center><span>Sorry no beers found..!</span></center>
+    </div>  

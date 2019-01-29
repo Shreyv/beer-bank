@@ -1,0 +1,18 @@
+<div class="cont">
+    <div class="img-container">
+         <img style="height: 100%; width: 100%;" ng-src="{{$ctrl.beer.image_url}}" ng-alt="{{$ctrl.beer.name}}" />
+    </div>
+    <div class="details">
+        <h1 style="color:orange">{{$ctrl.beer.name}}</h1>
+        <h3 style="margin-top:4px;">{{$ctrl.beer.tagline}}</h3> 
+        <hr>
+        <span><b>IBU: </b>{{$ctrl.beer.ibu}} <b>ABV: </b>{{$ctrl.beer.abv}} <b>EBC: </b>{{$ctrl.beer.ebc}}</span>
+        <p>{{$ctrl.beer.description}}</p>
+        <p><b>Best Served with:</b>
+            <ul ng-repeat="item in $ctrl.beer.food_pairing">
+                <li>{{item}}</li>
+            </ul>
+        </p>
+    </div>
+    
+</div>

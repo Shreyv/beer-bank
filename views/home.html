@@ -1,0 +1,18 @@
+<div class="search">
+    <form>
+        <input ng-model="home.searchString" type="text" placeholder="Search your beer here..!!" />
+        <input type="submit" value="Search" ng-click="home.search()" />
+    </form>
+</div>
+
+<div class="list" infinite-scroll="home.nextPage()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
+    <div class="row" ng-repeat="chunk in home.beers | chunkBy:3">
+        <div class="col-lg-3 " ng-repeat="beer in chunk">
+            <beer details="beer">
+            </beer>
+        </div>
+    </div>
+
+<div ng-if="home.beers.length == 0">
+    <center><span>Sorry no beers found..!</span></center>
+</div>    
