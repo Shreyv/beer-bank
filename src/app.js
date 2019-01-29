@@ -9,6 +9,7 @@ var app = angular.module("beerBank", [
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
+    $urlRouterProvider.otherwise('home'); 
 
     $stateProvider
         .state('home', {
